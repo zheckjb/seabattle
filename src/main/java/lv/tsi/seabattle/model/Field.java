@@ -8,7 +8,7 @@ public class Field {
     private boolean invalid;
 
     public void setShip(String addr) {
-        content.put(addr,CellContent.EMPTY);
+        content.put(addr,CellContent.SHIP);
     }
     public boolean hasShip(String addr) {
         return content.get(addr) == CellContent.SHIP;
@@ -27,5 +27,9 @@ public class Field {
     public boolean isInvalid() {
         //Why not 'content.size() != 20;' ?
         return invalid;
+    }
+
+    public void setCell(String addr, CellContent value) {
+        content.put(addr,value);
     }
 }

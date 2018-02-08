@@ -10,62 +10,38 @@
 </head>
 
 <body class="w3-display-container">
-<div class="sideelement w3-display-leftmiddle w3-display-container">
-    <div class="bbox w3-display-middle w3-round-large">
-        <h2 class="w3-xxxlarge">Setup ships</h2>
-    </div>
-    <div class="w3-display-middle w3-center">
-        <h1 class="green w3-xlarge w3-animate-top">${playerGameContext.player.name}"</h1>
-
-        <form class="w3-container">
-            <input class="w3-button w3-green " type="submit" value="Start!">
-        </form>
-    </div>
-</div>
-<div class="w3-display-middle w3-display-container">
+    <c:set var="myField" value="${playerGameContext.player.myField}"/>
     <form class="w3-container" method="post">
-
-        <table class="w3-table w3-centered">
-            <tr>
-                <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                    <td>${col}</td>
-                </c:forEach>
-            </tr>
-            <c:forEach var="row" begin="1" end="10">
-                <tr>
-                    <td>${row}</td>
-                    <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
-                        <td>
-                            <input class="w3-check" type="checkbox" name="addr" value="${col}${row}">
-                        </td>
+        <div class="sideelement w3-display-leftmiddle w3-display-container">
+            <div class="bbox w3-display-middle w3-round-large">
+                <h2 class="w3-xxxlarge">Setup ships</h2>
+            </div>
+            <div class="w3-display-middle w3-center">
+                <h1 class="green w3-xlarge w3-animate-top">${playerGameContext.player.name}"</h1>
+                    <input class="w3-button w3-green " type="submit" value="Start!">
+            </div>
+        </div>
+        <div class="w3-display-middle w3-display-container">
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
+                            <td>${col}</td>
+                        </c:forEach>
+                    </tr>
+                    <c:forEach var="row" begin="1" end="10">
+                        <tr>
+                            <td>${row}</td>
+                            <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
+                                <c:set var="addr" value="${col}${row}"/>
+                                <td class="${myField.getCell(addr)}">
+                                    <input class="w3-check" type="checkbox" name="addr"
+                                           value="${addr}" ${myField.hasShip(addr) ? "checked" : ""}>
+                                </td>
+                            </c:forEach>
+                        </tr>
                     </c:forEach>
-                </tr>
-            </c:forEach>
-        </table>
-
+                </table>
+        </div>
     </form>
-</div>
 </body>
-<!--body>
-<form method="post">
-    <table style="text-align: center">
-        <tr>
-            <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                <td>${col}</td>
-            </c:forEach>
-        </tr>
-        <c:forEach var="row" begin="1" end="10">
-            <tr>
-                <td>${row}</td>
-                <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
-                    <td>
-                        <input type="checkbox" name="addr" value="${col}${row}">
-                    </td>
-                </c:forEach>
-            </tr>
-        </c:forEach>
-    </table>
-    <input type="submit" value="Start!">
-</form>
-</body-->
 </html>

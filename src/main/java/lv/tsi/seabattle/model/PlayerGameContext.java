@@ -8,13 +8,13 @@ import java.io.Serializable;
 @Named
 public class PlayerGameContext implements Serializable {
     private Player player;
-    private static Game game;
+    private Game game;
 
-    public static void setGame(Game game) {
-        PlayerGameContext.game = game;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public static Game getGame() {
+    public Game getGame() {
         return game;
     }
 

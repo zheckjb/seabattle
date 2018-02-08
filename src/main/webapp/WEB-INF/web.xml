@@ -11,5 +11,15 @@
     <session-config>
         <session-timeout>20</session-timeout>
     </session-config>
+    <servlet>
+        <servlet-name>Log4jinit</servlet-name>
+        <servlet-class>lv.tsi.seabattle.controller.Log4jinit</servlet-class>
 
+        <init-param>
+            <param-name>log4j-init-file</param-name>
+            <param-value>WEB-INF/log4j.xml</param-value>
+        </init-param>
+
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 </web-app>

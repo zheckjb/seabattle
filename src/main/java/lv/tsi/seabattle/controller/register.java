@@ -23,21 +23,18 @@ public class register extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("player1-name");
-        System.out.println("POST: Input text: "+name);
         Player player = new Player();
         player.setName(name);
         playerGameContext.setPlayer(player);
 
         Game game = gameManager.register(player);
 
-        PlayerGameContext.setGame(game);
+        playerGameContext.setGame(game);
 
         response.sendRedirect("waitEnemyRegister");
     }
 //GET request - parameter passed within url address
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String name = request.getParameter("player1-name");
-        System.out.println("GET (register)");
         request.getRequestDispatcher("/WEB-INF/register.jsp").include(request,response);
     }
 }

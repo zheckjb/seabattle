@@ -36,7 +36,7 @@ public class ShipPlacementServlet extends HttpServlet {
 
         } else {
             p.setReady(true);
-            response.sendRedirect("waitEnenmyPlacement");
+            response.sendRedirect("waitEnemyPlacement");
         }
 
         for (String a: address) {

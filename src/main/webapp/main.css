@@ -30,3 +30,15 @@ div.bbox {
     height: 30%;
 
 }
+
+td.SHIP {
+    background-color: darkblue;
+}
+
+td.HIT {
+    background-color: red;
+}
+
+td.MISS {
+    background-color: aqua;
+}

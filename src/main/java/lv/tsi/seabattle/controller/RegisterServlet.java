@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "register", urlPatterns = "/register")
-public class register extends HttpServlet {
+@WebServlet(name = "RegisterServlet", urlPatterns = "/register")
+public class RegisterServlet extends HttpServlet {
 //POST request - parameters passed within data container(?)
     @Inject
     private PlayerGameContext playerGameContext;
@@ -22,7 +22,7 @@ public class register extends HttpServlet {
     private GameManager gameManager;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name = request.getParameter("player1-name");
+        String name = request.getParameter("player-name");
         Player player = new Player();
         player.setName(name);
         playerGameContext.setPlayer(player);

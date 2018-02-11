@@ -8,14 +8,25 @@
     <title>Welcome to SeaBattle</title>
 </head>
 <body class="w3-display-container">
-    <div class="sideelement w3-display-leftmiddle w3-display-container">
-        <div class="bbox w3-display-middle w3-round-large">
-            <!--a href="register" class="w3-display-middle w3-button w3-green">Start game</a-->
-        </div>
-        <div class="w3-display-middle w3-center">
+    <div class="bbox w3-display-middle w3-round-large w3-display-container">
+        <div class="forText w3-container w3-centered" >
             <h1 class="w3-xxxlarge w3-animate-top">SEA BATTLE</h1>
-            <a class="w3-button w3-large w3-green w3-round" href="register">Start game</a>
+        </div>
+        <div class="forBtn w3-container w3-center">
+            <a class="w3-button w3-large w3-green w3-round " href="register">Start game</a>
         </div>
     </div>
 </body>
+<!--body class="w3-display-container">
+<div class="sideelement w3-display-leftmiddle w3-display-container">
+    <div class="bbox w3-display-middle w3-round-large">
+
+    </div>
+    <div class="w3-display-middle w3-center">
+        <h1 class="w3-xxxlarge w3-animate-top">SEA BATTLE</h1>
+        <a class="w3-button w3-large w3-green w3-round" href="register">Start game</a>
+    </div>
+</div>
+</body-->
+
 </html>

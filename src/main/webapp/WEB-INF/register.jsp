@@ -8,6 +8,21 @@
     <title>Seabatle - Register page</title>
 </head>
 <body class="w3-display-container">
+    <div class="bbox w3-display-middle w3-round-large w3-display-container">
+        <form class="w3-container" action="register" method="post">
+        <div class="forText w3-container w3-centered" >
+            <h1 class="w3-xxxlarge w3-animate-top">Input name</h1>
+            <br>
+            <input class="w3-input w3-border w3-light-grey " type="text" name="player-name">
+        </div>
+        <div class="forBtn w3-container w3-center">
+            <input class="w3-button w3-green" type="submit" name="registerBtn" value="Join"/>
+        </div>
+        </form>
+    </div>
+</body>
+
+<!--body class="w3-display-container">
 <div class="sideelement w3-display-leftmiddle w3-display-container">
     <div class="bbox w3-display-middle w3-round-large">
 
@@ -15,11 +30,11 @@
     <div class="w3-display-middle w3-center">
         <h1 class="w3-xxxlarge w3-animate-top">Input name</h1>
         <form class="w3-container" action="register" method="post">
-            <input class="w3-input w3-border w3-light-grey " type="text" name="player1-name">
+            <input class="w3-input w3-border w3-light-grey " type="text" name="player-name">
             <br>
             <input class="w3-button w3-green " type="submit" name="registerBtn" value="Join"/>
         </form>
     </div>
 </div>
-</body>
+</body-->
 </html>

@@ -30,6 +30,27 @@ div.bbox {
     height: 30%;
 
 }
+div.forText {
+    height: 70%;
+}
+div.forBtn {
+    height: 30%;
+    opacity: 1.0;
+}
+table {
+    border-collapse: collapse;
+}
+
+td {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+td.orange {
+    background-color: darkorange;
+}
 
 td.SHIP {
     background-color: darkblue;

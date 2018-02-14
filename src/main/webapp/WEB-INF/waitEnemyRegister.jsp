@@ -10,11 +10,9 @@
 
 </head>
 <body class="w3-display-container">
-    <div class="sideelement w3-display-leftmiddle w3-display-container">
-        <div class="bbox w3-display-middle w3-round-large">
-            <!--a href="register" class="w3-display-middle w3-button w3-green">Start game</a-->
-        </div>
-        <div class="w3-display-middle w3-center">
+    <div class="bbox w3-display-middle w3-round-large w3-display-container"></div>
+    <div class="w3-display-middle w3-display-container">
+        <div class=" w3-container w3-centered" >
             <h1 class="w3-xxxlarge w3-animate-opacity">Waiting another player</h1>
         </div>
     </div>

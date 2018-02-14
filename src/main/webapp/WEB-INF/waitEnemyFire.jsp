@@ -11,25 +11,19 @@
 </head>
 
 <body class="w3-display-container">
-
-        <div class="sideelement w3-display-leftmiddle w3-display-container">
-            <div class="bbox w3-display-middle w3-round-large">
-                <h1 class="green w3-xlarge w3-animate-top">${playerGameContext.player.name}</h1>
-                <h2 class="w3-xxxlarge">Wait enemy fire</h2>
-            </div>
-        </div>
-        <div class="w3-display-middle w3-display-container">
-            <c:set var="myField" value="${playerGameContext.player.myField}"/>
-            <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
+    <c:set var="myField" value="${playerGameContext.player.myField}"/>
+    <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
+    <div class="fieldstyle w3-display-container">
+        <div class="w3-display-middle">
             <table class="w3-table w3-centered">
                 <tr>
                     <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                        <td>${col}</td>
+                        <td class="orange">${col}</td>
                     </c:forEach>
                 </tr>
                 <c:forEach var="row" begin="1" end="10">
                     <tr>
-                        <td>${row}</td>
+                        <td class="orange">${row}</td>
                         <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                             <c:set var="addr" value="${col}${row}"/>
                             <td class="${myField.getCell(addr)}"></td>
@@ -40,12 +34,12 @@
             <table class="w3-table w3-centered">
                 <tr>
                     <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                        <td>${col}</td>
+                        <td class="orange">${col}</td>
                     </c:forEach>
                 </tr>
                 <c:forEach var="row" begin="1" end="10">
                     <tr>
-                        <td>${row}</td>
+                        <td class="orange">${row}</td>
                         <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                             <c:set var="addr" value="${col}${row}"/>
                             <td class="${enemyField.getCell(addr)}">
@@ -55,7 +49,16 @@
                 </c:forEach>
             </table>
         </div>
-
+    </div>
+    <div class="sideelement w3-display-container w3-display-right">
+        <div class="bbox w3-display-middle w3-round-large"></div>
+        <div class="sidetop w3-display-top w3-display-container">
+            <h1 class="green w3-xlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
+        </div>
+        <div class="sidemiddle w3-container w3-centered" >
+            <h2 class="w3-xxlarge w3-display-middle">Wait enemyfire</h2><br>
+        </div>
+    </div>
 </body>
 </html>
 

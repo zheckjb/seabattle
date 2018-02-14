@@ -10,53 +10,59 @@
 </head>
 
 <body class="w3-display-container">
-    <form class="w3-container" method="post">
-        <div class="sideelement w3-display-leftmiddle w3-display-container">
-            <div class="bbox w3-display-middle w3-round-large">
-                <h1 class="green w3-xlarge w3-animate-top">${playerGameContext.player.name}</h1>
-                <h2 class="w3-xxxlarge">Battle</h2>
-            </div>
-            <div class="w3-display-middle w3-center">
-                <input class="w3-button w3-green " type="submit" value="Fire!">
+    <c:set var="myField" value="${playerGameContext.player.myField}"/>
+    <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
+    <form  method="post">
+        <div class="fieldstyle w3-display-container">
+            <div class="w3-display-middle">
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
+                            <td class="orange">${col}</td>
+                        </c:forEach>
+                    </tr>
+                    <c:forEach var="row" begin="1" end="10">
+                        <tr>
+                            <td class="orange">${row}</td>
+                            <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
+                                <c:set var="addr" value="${col}${row}"/>
+                                <td class="${myField.getCell(addr)}"></td>
+                            </c:forEach>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
+                            <td  class="orange">${col}</td>
+                        </c:forEach>
+                    </tr>
+                    <c:forEach var="row" begin="1" end="10">
+                        <tr>
+                            <td  class="orange">${row}</td>
+                            <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
+                                <c:set var="addr" value="${col}${row}"/>
+                                <td class="${enemyField.getCell(addr)}">
+                                    <input class="w3-check" type="radio" name="addr" value="${addr}">
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </c:forEach>
+                </table>
             </div>
         </div>
-        <div class="w3-display-middle w3-display-container">
-            <c:set var="myField" value="${playerGameContext.player.myField}"/>
-            <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
-            <table class="w3-table w3-centered">
-                <tr>
-                    <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                        <td class="orange">${col}</td>
-                    </c:forEach>
-                </tr>
-                <c:forEach var="row" begin="1" end="10">
-                    <tr>
-                        <td class="orange">${row}</td>
-                        <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
-                            <c:set var="addr" value="${col}${row}"/>
-                            <td class="${myField.getCell(addr)}"></td>
-                        </c:forEach>
-                    </tr>
-                </c:forEach>
-            </table>
-            <table class="w3-table w3-centered">
-                <tr>
-                    <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
-                        <td  class="orange">${col}</td>
-                    </c:forEach>
-                </tr>
-                <c:forEach var="row" begin="1" end="10">
-                    <tr>
-                        <td  class="orange">${row}</td>
-                        <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
-                            <c:set var="addr" value="${col}${row}"/>
-                            <td class="${enemyField.getCell(addr)}">
-                                <input class="w3-check" type="radio" name="addr" value="${addr}">
-                            </td>
-                        </c:forEach>
-                    </tr>
-                </c:forEach>
-            </table>
+        <div class="sideelement w3-display-container w3-display-right">
+            <div class="bbox w3-display-middle w3-round-large"></div>
+            <div class="sidetop w3-display-top w3-display-container">
+                <h1 class="green w3-xlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
+            </div>
+            <div class="sidemiddle w3-container w3-centered" >
+                <h2 class="w3-xxlarge w3-display-middle">Make your shoot</h2><br>
+            </div>
+            <div class="forBtn w3-display-bottommiddle w3-container w3-center">
+                <input class="w3-button w3-green " type="submit" value="Fire!">
+            </div>
+
         </div>
     </form>
 </body>

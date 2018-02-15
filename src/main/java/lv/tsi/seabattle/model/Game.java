@@ -4,6 +4,9 @@ public class Game {
     private Player player1;
     private Player player2;
     private boolean player1move = true;
+    private boolean finished;
+    private boolean cancelled;
+
 
     public Player getCurrentPlayer() {
         if (player1move) {
@@ -44,6 +47,10 @@ public class Game {
         if (c == CellContent.SHIP) {
             getOppositePlayer().getMyField().setCell(addr,CellContent.HIT);
             getCurrentPlayer().getEnemyField().setCell(addr,CellContent.HIT);
+            if(!getOppositePlayer().getMyField().hasMoreShips()) {
+                finished = true;
+                getCurrentPlayer().setWinner(true);
+            }
             return;
         }
         if (c == CellContent.EMPTY) {
@@ -51,5 +58,17 @@ public class Game {
             getCurrentPlayer().getEnemyField().setCell(addr,CellContent.MISS);
         }
         player1move = !player1move;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public boolean isCancelled() {
+        return cancelled;
+    }
+
+    public void setCancelled(boolean cancelled) {
+        this.cancelled = cancelled;
     }
 }

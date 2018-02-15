@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/main.css">
     <title>Seabatle - Ship register</title>
@@ -15,7 +15,7 @@
     <c:set var="enemyField" value="${playerGameContext.player.enemyField}"/>
     <div class="fieldstyle w3-display-container">
         <div class="w3-display-middle">
-            <table class="w3-table w3-centered">
+            <table class="w3-table w3-centered inline">
                 <tr>
                     <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
                         <td class="orange">${col}</td>
@@ -31,7 +31,7 @@
                     </tr>
                 </c:forEach>
             </table>
-            <table class="w3-table w3-centered">
+            <table class="w3-table w3-centered inline">
                 <tr>
                     <c:forEach var="col" items=" ,A,B,C,D,E,F,G,H,I,J">
                         <td class="orange">${col}</td>
@@ -53,7 +53,7 @@
     <div class="sideelement w3-display-container w3-display-right">
         <div class="bbox w3-display-middle w3-round-large"></div>
         <div class="sidetop w3-display-top w3-display-container">
-            <h1 class="green w3-xlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
+            <h1 class="black w3-xxlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
         </div>
         <div class="sidemiddle w3-container w3-centered" >
             <h2 class="w3-xxlarge w3-display-middle">Wait enemyfire</h2><br>

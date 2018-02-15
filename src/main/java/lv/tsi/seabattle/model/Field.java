@@ -6,7 +6,14 @@ import java.util.Map;
 public class Field {
     private Map<String,CellContent> content = new HashMap<>();
     private boolean invalid;
+    public boolean hasMoreShips() {
+        return content.containsValue(CellContent.SHIP);
+    }
 
+    /**
+     * This method set Ship address and Content
+     * @param addr
+     */
     public void setShip(String addr) {
         content.put(addr,CellContent.SHIP);
     }

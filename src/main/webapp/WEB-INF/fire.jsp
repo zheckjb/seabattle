@@ -43,7 +43,7 @@
                             <c:forEach var="col" items="A,B,C,D,E,F,G,H,I,J">
                                 <c:set var="addr" value="${col}${row}"/>
                                 <td class="${enemyField.getCell(addr)}">
-                                    <input class="w3-check" type="radio" name="addr" value="${addr}">
+                                    <input class="roundSmall" type="radio" name="addr" value="${addr}">
                                 </td>
                             </c:forEach>
                         </tr>
@@ -54,7 +54,7 @@
         <div class="sideelement w3-display-container w3-display-right">
             <div class="bbox w3-display-middle w3-round-large"></div>
             <div class="sidetop w3-display-top w3-display-container">
-                <h1 class="green w3-xlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
+                <h1 class="black w3-xxlarge w3-display-bottommiddle">${playerGameContext.player.name}</h1>
             </div>
             <div class="sidemiddle w3-container w3-centered" >
                 <h2 class="w3-xxlarge w3-display-middle">Make your shoot</h2><br>
